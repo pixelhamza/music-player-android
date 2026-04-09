@@ -1,12 +1,15 @@
 package com.example.musicplayer;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,7 +53,20 @@ public class PlaylistActivity extends AppCompatActivity {
                 },
                 this::confirmDeletePlaylist
         );
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@androidx.annotation.NonNull Rect outRect,
+                                       @androidx.annotation.NonNull View view,
+                                       @androidx.annotation.NonNull RecyclerView parent,
+                                       @androidx.annotation.NonNull RecyclerView.State state) {
+                int spacing = (int) (12 * parent.getResources().getDisplayMetrics().density);
+                outRect.left = spacing / 2;
+                outRect.right = spacing / 2;
+                outRect.top = spacing / 2;
+                outRect.bottom = spacing / 2;
+            }
+        });
         recyclerView.setAdapter(playlistAdapter);
 
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());

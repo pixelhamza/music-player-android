@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -155,9 +156,7 @@ public class HomeActivity extends AppCompatActivity implements PlaybackListener 
         recyclerSongs.setLayoutManager(new LinearLayoutManager(this));
         recyclerSongs.setAdapter(songAdapter);
 
-        recyclerPlaylists.setLayoutManager(
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        );
+        recyclerPlaylists.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerPlaylists.setAdapter(playlistAdapter);
     }
 
@@ -211,10 +210,6 @@ public class HomeActivity extends AppCompatActivity implements PlaybackListener 
         List<String> permissions = new ArrayList<>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             permissions.add(Manifest.permission.READ_MEDIA_AUDIO);
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
-                    != PackageManager.PERMISSION_GRANTED) {
-                permissions.add(Manifest.permission.POST_NOTIFICATIONS);
-            }
         } else {
             permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         }

@@ -57,7 +57,6 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
             );
-            layoutParams.bottomMargin = 18;
             view.setLayoutParams(layoutParams);
         }
         return new PlaylistViewHolder(view);

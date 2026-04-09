@@ -38,8 +38,6 @@
     <string name="account">Account</string>
     <string name="player_subtitle">Play your local songs</string>
     <string name="mini_player_default">Pick a song to begin</string>
-    <string name="notification_channel_name">Playback</string>
-    <string name="notification_channel_description">Shows the current song playing in MuseBox.</string>
     <string name="playlist_created">Playlist created</string>
     <string name="playlist_deleted">Playlist deleted</string>
     <string name="song_added_to_playlist">Song added to playlist</string>
@@ -48,7 +46,6 @@
     <string name="home_subtitle">Your songs</string>
     <string name="playlist_subtitle">Build simple playlists using SharedPreferences.</string>
     <string name="player_hint">Tap songs from home or a playlist to start playback.</string>
-    <string name="notification_text_playing">Playing from your local library</string>
     <string name="delete_playlist">Delete playlist</string>
     <string name="delete_playlist_confirm">Delete %1$s? This cannot be undone.</string>
     <string name="account_initial_placeholder">A</string>

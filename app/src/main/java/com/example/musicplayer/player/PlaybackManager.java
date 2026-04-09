@@ -34,7 +34,6 @@ public class PlaybackManager {
 
     private PlaybackManager(Context context) {
         appContext = context.getApplicationContext();
-        NotificationHelper.createChannel(appContext);
     }
 
     public static synchronized PlaybackManager getInstance(Context context) {
@@ -74,11 +73,9 @@ public class PlaybackManager {
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
             notifyState();
-            NotificationHelper.showPlaybackNotification(appContext, getCurrentSong(), false);
         } else {
             mediaPlayer.start();
             notifyState();
-            NotificationHelper.showPlaybackNotification(appContext, getCurrentSong(), true);
         }
     }
 
@@ -141,7 +138,6 @@ public class PlaybackManager {
                 player.start();
                 notifyState();
                 startProgressLoop();
-                NotificationHelper.showPlaybackNotification(appContext, song, true);
             });
             mediaPlayer.setOnCompletionListener(player -> playNext());
             mediaPlayer.prepareAsync();

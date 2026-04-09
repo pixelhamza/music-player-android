@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="espresso">#1B1111</color>
+    <color name="cocoa">#2B1A1A</color>
+    <color name="mocha">#3A2726</color>
+    <color name="rose_dust">#D88E95</color>
+    <color name="rose_mist">#F5D6D7</color>
+    <color name="soft_blush">#F4EDEE</color>
+    <color name="muted_text">#C8B5B4</color>
+    <color name="warm_white">#FFF8F7</color>
+    <color name="highlight">#9C646A</color>
+    <color name="success">#86C47C</color>
+</resources>

@@ -111,6 +111,7 @@ public class HomeActivity extends AppCompatActivity implements PlaybackListener 
 
     private void bindViews() {
         tvSectionTitle = findViewById(R.id.tvSectionTitle);
+        tvSectionSubtitle = findViewById(R.id.tvSectionSubtitle);
         tvPlaylistSection = findViewById(R.id.tvPlaylistSection);
         tvEmptySongs = findViewById(R.id.tvEmptySongs);
         tvAccountName = findViewById(R.id.tvAccountName);

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MuseBox</string>
-    <string name="app_tagline">Your local songs, styled with a soft vinyl look.</string>
+    <string name="app_tagline">Your local library with a clean dark-mode look.</string>
     <string name="welcome_back">Welcome back</string>
     <string name="create_account">Create account</string>
     <string name="login">Login</string>
@@ -13,8 +13,8 @@
     <string name="accept_terms">I agree to the basic app demo terms</string>
     <string name="switch_to_signup">Need an account? Sign up</string>
     <string name="switch_to_login">Already registered? Login</string>
-    <string name="quick_picks">Quick picks</string>
-    <string name="trending_playlists">Trending community playlists</string>
+    <string name="quick_picks">Library</string>
+    <string name="trending_playlists">Your playlists</string>
     <string name="library_permission_needed">Allow audio access to scan songs from your device.</string>
     <string name="grant_permission">Grant permission</string>
     <string name="no_songs_found">No local audio files were found yet.</string>
@@ -22,7 +22,6 @@
     <string name="create_playlist">Create playlist</string>
     <string name="playlist_name_hint">Playlist name</string>
     <string name="playlists">Playlists</string>
-    <string name="liked_songs">Liked songs</string>
     <string name="logout">Logout</string>
     <string name="now_playing">Now playing</string>
     <string name="add_to_playlist">Add to playlist</string>
@@ -37,18 +36,20 @@
     <string name="history">History</string>
     <string name="stats">Stats</string>
     <string name="account">Account</string>
-    <string name="player_subtitle">Local playback demo with notifications</string>
+    <string name="player_subtitle">Play songs from your library and playlists</string>
     <string name="mini_player_default">Pick a song to begin</string>
     <string name="notification_channel_name">Playback</string>
     <string name="notification_channel_description">Shows the current song playing in MuseBox.</string>
     <string name="playlist_created">Playlist created</string>
+    <string name="playlist_deleted">Playlist deleted</string>
     <string name="song_added_to_playlist">Song added to playlist</string>
     <string name="song_removed_from_playlist">Song removed from playlist</string>
-    <string name="liked_song_saved">Saved to liked songs</string>
-    <string name="liked_song_removed">Removed from liked songs</string>
     <string name="account_stats">%1$s\n%2$d songs | %3$d artists | %4$d albums</string>
-    <string name="home_subtitle">Browse your scanned library and jump into playback.</string>
+    <string name="home_subtitle">Browse your songs and jump into playback.</string>
     <string name="playlist_subtitle">Build simple playlists using SharedPreferences.</string>
     <string name="player_hint">Tap songs from home or a playlist to start playback.</string>
     <string name="notification_text_playing">Playing from your local library</string>
+    <string name="delete_playlist">Delete playlist</string>
+    <string name="delete_playlist_confirm">Delete %1$s? This cannot be undone.</string>
+    <string name="account_initial_placeholder">A</string>
 </resources>

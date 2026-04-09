@@ -3,25 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app_gradient"
+    android:background="@color/app_background"
     android:padding="20dp">
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:background="@drawable/bg_circle_chip"
-        android:src="@android:drawable/ic_media_previous"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        android:text=""
+        app:backgroundTint="@color/app_surface"
+        app:cornerRadius="22dp"
+        app:icon="@android:drawable/ic_media_previous"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="25dp"
+        app:iconTint="@color/text_primary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/warm_white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/playlists"
-        android:textColor="@color/warm_white"
+        android:textColor="@color/text_primary"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="@string/playlist_subtitle"
-        android:textColor="@color/muted_text"
+        android:textColor="@color/text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -43,7 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        app:cardBackgroundColor="@color/mocha"
+        app:cardBackgroundColor="@color/app_surface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
@@ -58,12 +66,12 @@
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/cocoa"
+                app:boxBackgroundColor="@color/app_background_elevated"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp"
-                app:boxStrokeColor="@color/rose_dust">
+                app:boxStrokeColor="@color/color_secondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPlaylistName"
@@ -71,8 +79,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/playlist_name_hint"
                     android:inputType="textCapWords"
-                    android:textColor="@color/warm_white"
-                    android:textColorHint="@color/muted_text" />
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -81,8 +89,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:text="@string/create_playlist"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
-                app:backgroundTint="@color/rose_dust"
+                app:backgroundTint="@color/color_secondary"
                 app:cornerRadius="20dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

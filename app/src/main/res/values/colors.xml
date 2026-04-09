@@ -2,14 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="espresso">#1B1111</color>
-    <color name="cocoa">#2B1A1A</color>
-    <color name="mocha">#3A2726</color>
-    <color name="rose_dust">#D88E95</color>
-    <color name="rose_mist">#F5D6D7</color>
-    <color name="soft_blush">#F4EDEE</color>
-    <color name="muted_text">#C8B5B4</color>
-    <color name="warm_white">#FFF8F7</color>
-    <color name="highlight">#9C646A</color>
-    <color name="success">#86C47C</color>
+    <color name="app_background">#FF121212</color>
+    <color name="app_background_elevated">#FF181818</color>
+    <color name="app_surface">#FF1E1E1E</color>
+    <color name="color_primary">#FFA8ABB2</color>
+    <color name="color_secondary">#FF5C5F66</color>
+    <color name="color_surface_variant">#FF242428</color>
+    <color name="text_secondary">#FF80838A</color>
+    <color name="text_primary">#FFF2F2F2</color>
+    <color name="color_secondary_variant">#FF6C6F76</color>
+    <color name="status_success">#86C47C</color>
 </resources>

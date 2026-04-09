@@ -1,15 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.MusicPlayer" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/rose_dust</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/rose_mist</item>
-        <item name="colorOnSecondary">@color/espresso</item>
-        <item name="colorSurface">@color/cocoa</item>
-        <item name="colorOnSurface">@color/warm_white</item>
-        <item name="android:colorBackground">@color/espresso</item>
-        <item name="android:windowBackground">@color/espresso</item>
-        <item name="android:statusBarColor">@color/espresso</item>
-        <item name="android:navigationBarColor">@color/espresso</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorOnPrimary">@color/app_background</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        <item name="colorSecondaryContainer">@color/color_secondary</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+        <item name="colorSurface">@color/app_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="android:statusBarColor">@color/app_background</item>
+        <item name="android:navigationBarColor">@color/app_background</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="materialCardViewStyle">@style/Widget.MusicPlayer.CardView</item>
@@ -18,7 +20,7 @@
     <style name="Theme.MusicPlayer" parent="Base.Theme.MusicPlayer" />
 
     <style name="Widget.MusicPlayer.CardView" parent="Widget.Material3.CardView.Elevated">
-        <item name="cardBackgroundColor">@color/mocha</item>
+        <item name="cardBackgroundColor">@color/app_surface</item>
         <item name="cardCornerRadius">24dp</item>
     </style>
 </resources>

@@ -3,53 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app_gradient"
+    android:background="@color/app_background"
     android:padding="20dp">
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:background="@drawable/bg_circle_chip"
-        android:src="@android:drawable/ic_media_previous"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        android:text=""
+        app:backgroundTint="@color/app_surface"
+        app:cornerRadius="22dp"
+        app:icon="@android:drawable/ic_media_previous"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="25dp"
+        app:iconTint="@color/text_primary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/warm_white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPlaylistName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:textColor="@color/warm_white"
+        android:textColor="@color/text_primary"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnBack" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddSongs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/add_songs"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/rose_dust"
-        app:cornerRadius="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPlaylistName" />
-
     <TextView
         android:id="@+id/tvEmptyPlaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:text="@string/empty_playlist"
-        android:textColor="@color/muted_text"
+        android:textColor="@color/text_secondary"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAddSongs" />
+        app:layout_constraintTop_toBottomOf="@id/tvPlaylistName" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPlaylistSongs"
@@ -59,6 +55,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAddSongs" />
+        app:layout_constraintTop_toBottomOf="@id/tvPlaylistName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

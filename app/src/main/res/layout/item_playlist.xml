@@ -4,59 +4,72 @@
     android:layout_width="188dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="14dp"
-    app:cardBackgroundColor="@color/mocha"
+    app:cardBackgroundColor="@color/app_surface"
     app:cardCornerRadius="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:padding="20dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="118dp"
-            android:background="@drawable/bg_album_art">
-
-            <ImageView
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="12dp"
-                android:background="@drawable/bg_circle_accent"
-                android:padding="10dp"
-                android:src="@android:drawable/ic_media_play"
-                app:tint="@color/warm_white" />
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/tvPlaylistTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/warm_white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPlaylistTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeletePlaylist"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:text=""
+                android:visibility="gone"
+                app:backgroundTint="@color/app_background_elevated"
+                app:cornerRadius="18dp"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="@color/text_secondary" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvPlaylistSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textColor="@color/muted_text"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/tvPlaylistCount"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/bg_circle_chip"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="6dp"
-            android:textColor="@color/rose_mist"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            app:cardBackgroundColor="@color/app_background_elevated"
+            app:cardCornerRadius="14dp">
+
+            <TextView
+                android:id="@+id/tvPlaylistCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:textColor="@color/color_primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

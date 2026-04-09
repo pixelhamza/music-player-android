@@ -55,6 +55,17 @@ public class PlaylistManager {
         preferences.edit().putStringSet(getPlaylistKey(playlistName), ids).apply();
     }
 
+    public void deletePlaylist(String playlistName) {
+        Set<String> names = getPlaylistNameSet();
+        if (!names.remove(playlistName)) {
+            return;
+        }
+        preferences.edit()
+                .putStringSet(KEY_NAMES, names)
+                .remove(getPlaylistKey(playlistName))
+                .apply();
+    }
+
     public List<Playlist> getPlaylists(List<Song> library) {
         List<Playlist> playlists = new ArrayList<>();
         for (String name : getPlaylistNameSet()) {

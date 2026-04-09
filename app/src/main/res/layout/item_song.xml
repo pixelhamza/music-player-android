@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
-    app:cardBackgroundColor="@color/mocha"
+    app:cardBackgroundColor="@color/app_surface"
     app:cardCornerRadius="22dp">
 
     <LinearLayout
@@ -18,10 +18,10 @@
             android:id="@+id/imgArt"
             android:layout_width="58dp"
             android:layout_height="58dp"
-            android:background="@drawable/bg_album_art"
+            android:background="@color/color_surface_variant"
             android:padding="12dp"
             android:src="@android:drawable/ic_media_play"
-            app:tint="@color/warm_white" />
+            app:tint="@color/text_primary" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -34,7 +34,7 @@
                 android:id="@+id/tvSongTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/warm_white"
+                android:textColor="@color/text_primary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -43,25 +43,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:textColor="@color/muted_text"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/btnFavorite"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@android:drawable/btn_star_big_off"
-            app:tint="@color/rose_mist" />
 
         <ImageButton
             android:id="@+id/btnAction"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:src="@android:drawable/ic_input_add"
-            app:tint="@color/warm_white" />
+            app:tint="@color/text_primary" />
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

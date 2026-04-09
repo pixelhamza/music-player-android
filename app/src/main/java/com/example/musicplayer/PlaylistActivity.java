@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,11 +41,15 @@ public class PlaylistActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerUserPlaylists);
         MaterialButton btnCreate = findViewById(R.id.btnCreatePlaylist);
 
-        playlistAdapter = new PlaylistAdapter(true, playlist -> {
-            Intent intent = new Intent(this, PlaylistDetailActivity.class);
-            intent.putExtra("playlist_name", playlist.getName());
-            startActivity(intent);
-        });
+        playlistAdapter = new PlaylistAdapter(
+                true,
+                playlist -> {
+                    Intent intent = new Intent(this, PlaylistDetailActivity.class);
+                    intent.putExtra("playlist_name", playlist.getName());
+                    startActivity(intent);
+                },
+                this::confirmDeletePlaylist
+        );
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(playlistAdapter);
 
@@ -89,5 +94,18 @@ public class PlaylistActivity extends AppCompatActivity {
     private void refreshPlaylists() {
         List<Playlist> playlists = playlistManager.getPlaylists(allSongs);
         playlistAdapter.setPlaylists(playlists);
+    }
+
+    private void confirmDeletePlaylist(Playlist playlist) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_playlist)
+                .setMessage(getString(R.string.delete_playlist_confirm, playlist.getName()))
+                .setPositiveButton(R.string.delete_playlist, (dialog, which) -> {
+                    playlistManager.deletePlaylist(playlist.getName());
+                    Toast.makeText(this, R.string.playlist_deleted, Toast.LENGTH_SHORT).show();
+                    refreshPlaylists();
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 }

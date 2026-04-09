@@ -19,13 +19,25 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
         void onPlaylistClicked(Playlist playlist);
     }
 
+    public interface PlaylistDeleteListener {
+        void onPlaylistDelete(Playlist playlist);
+    }
+
     private final boolean fullWidthCards;
     private final PlaylistClickListener listener;
+    private final PlaylistDeleteListener deleteListener;
     private final List<Playlist> playlists = new ArrayList<>();
 
     public PlaylistAdapter(boolean fullWidthCards, PlaylistClickListener listener) {
+        this(fullWidthCards, listener, null);
+    }
+
+    public PlaylistAdapter(boolean fullWidthCards,
+                           PlaylistClickListener listener,
+                           PlaylistDeleteListener deleteListener) {
         this.fullWidthCards = fullWidthCards;
         this.listener = listener;
+        this.deleteListener = deleteListener;
     }
 
     public void setPlaylists(List<Playlist> items) {
@@ -58,6 +70,12 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
         holder.tvSubtitle.setText(playlist.getSubtitle());
         holder.tvCount.setText(playlist.getSongCount() + " songs");
         holder.itemView.setOnClickListener(v -> listener.onPlaylistClicked(playlist));
+        holder.btnDelete.setVisibility(deleteListener == null ? View.GONE : View.VISIBLE);
+        holder.btnDelete.setOnClickListener(v -> {
+            if (deleteListener != null) {
+                deleteListener.onPlaylistDelete(playlist);
+            }
+        });
     }
 
     @Override
@@ -69,12 +87,14 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
         private final TextView tvTitle;
         private final TextView tvSubtitle;
         private final TextView tvCount;
+        private final com.google.android.material.button.MaterialButton btnDelete;
 
         public PlaylistViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvPlaylistTitle);
             tvSubtitle = itemView.findViewById(R.id.tvPlaylistSubtitle);
             tvCount = itemView.findViewById(R.id.tvPlaylistCount);
+            btnDelete = itemView.findViewById(R.id.btnDeletePlaylist);
         }
     }
 }
